@@ -6,16 +6,12 @@ from config import settings
 
 
 bot = Bot(settings['api_key'])
-
-# Ответчик на текс
-@bot.on.private_message(text=["Привет","прив","Хай"])
-async def hi_handler(message: Message):
-    users_info = await bot.api.users.get(message.from_id)
-    await message.answer("Привет, {}".format(users_info[0].first_name)+" чем я могу тебе помочь?")
+keyboard = ""
 
 # Создание кнопок
 @bot.on.private_message(text=["menu","меню","Начать","start","Start"])
 async def handler(message: Message):
+	global keyboard
 	keyboard = Keyboard()
 
 	keyboard.add(Text("Техническая поддержка"), color=KeyboardButtonColor.POSITIVE)
@@ -30,6 +26,12 @@ async def handler(message: Message):
 	# keyboard.add(OpenLink("https://vk.com/albums-192558128", "Портфолио"), color=KeyboardButtonColor.PRIMARY)
 
 	await message.answer("Привет! Я включил тебе клавиатуру, но если тебе она не нужна просто нажми на соотвествующую кнопку.", keyboard=keyboard)
+
+# Ответчик на текс
+@bot.on.private_message(text=["Привет","прив","Хай"])
+async def hi_handler(message: Message):
+    users_info = await bot.api.users.get(message.from_id)
+    await message.answer("Привет, {}".format(users_info[0].first_name)+" чем я могу тебе помочь?")
 
 @bot.on.private_message(text="FAQ")
 async def faq(message: Message):
