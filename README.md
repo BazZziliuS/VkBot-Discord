@@ -1,4 +1,7 @@
 # VkBot-Discord
-![image](https://user-images.githubusercontent.com/18011884/148921266-876a229e-3f43-467a-9c34-91525d06ff33.png)
-![image](https://user-images.githubusercontent.com/18011884/148921355-1cf8c6b6-05ca-4770-b81f-11f298e0c49f.png)
+Просто кнопочки и оповещение в дискорд                         
+pip install vkbottle                                                      
+pip install discord-webhook                                                           
+![image](https://user-images.githubusercontent.com/18011884/148973682-8ac54929-090c-403d-b20e-de33630a54f7.png)
+![image](https://user-images.githubusercontent.com/18011884/148973069-7d45ac3a-a07c-41df-a023-61d2af7533c2.png)
 
